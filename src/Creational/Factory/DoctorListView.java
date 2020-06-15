@@ -1,26 +1,12 @@
 package Creational.Factory;
 
-import javafx.fxml.FXMLLoader;
-
-import java.io.IOException;
-import java.sql.*;
-import java.util.HashMap;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 import sample.Const;
-import sample.Controller;
 import sample.DatabaseHandler;
-import sample.SpecialistController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class DoctorListView extends JPanel implements Panel {
     JPanel panel = new JPanel();
@@ -44,23 +30,29 @@ public class DoctorListView extends JPanel implements Panel {
         label.setFont(new Font("Dialog", Font.BOLD, 20));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JTextArea jTextField = new JTextArea("helloakdbasdf");
+        JTextArea jTextField = new JTextArea("\nХирург Андрей Павлович" +
+                                                "\nТравматолог Илья Сергеевич" +
+                                                "\nУролог Павел Петрович" +
+                                                "\nЛОР Вениамин Павлович" +
+                                                "\nКардиолог Сергей Андреевич\n");
         jTextField.setOpaque(true);
-        jTextField.setBackground(new Color(235, 233, 126));
+        jTextField.setBackground(new Color(128, 0, 0));
+//        jTextField.setDisabledTextColor(new Color(244, 164, 96));
+        jTextField.setForeground(new Color(244, 164, 96));
+        jTextField.setFont(new Font("Times New Roman",Font.CENTER_BASELINE,20));
        // jTextField.setHorizontalAlignment(SwingConstants.CENTER);
 
         frame.getContentPane().add(panel);
 
         panel.add(label);
         panel.add(jTextField);
-//        Graphics2D graphics= (Graphics2D)panel.getGraphics();
-        //dbHandler.setGraphics(graphics);
-//        select1(graphics,id,nameText,surnameText,proffession,workplace);
+        panel.setBackground(new Color(128, 0, 0));
         onClick();
         panel.add(button);
         jTextField.setLocation(40,40);
         jTextField.setSize(40,60);
-        frame.setSize(400, 500);
+        frame.setSize(400, 300);
+
         frame.setVisible(true);
         //String string = new String(dbHandler.select(id,nameText,surnameText,proffession,workplace));
        // dbHandler.select();
